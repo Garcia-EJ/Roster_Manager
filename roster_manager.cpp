@@ -120,12 +120,12 @@ int main() {
 }
 bool addStudent(Student roster[], int &count, int id, const string &name) {
     if (count >= MAX_CAPACITY) {
-        cout << "Warning: Roster capacity reached (MAX_CAPACITY = " << MAX_CAPACITY << ").\n";
+        cout << "\nWarning: Roster capacity reached (MAX_CAPACITY = " << MAX_CAPACITY << ").\n";
         return false;
     }
     int dummyComparisons = 0;
     if (findStudentById(roster, count, id, dummyComparisons) != -1) {
-        cout << "Error: Student ID " << id << " already exists. IDs must be strictly unique.\n";
+        cout << "\nError: Student ID " << id << " already exists. IDs must be strictly unique.\n";
         return false;
     }
     roster[count].id = id;
@@ -163,7 +163,7 @@ bool safeGetRecord(const Student roster[], int count, int index, Student &outStu
 }
 void printRoster(const Student roster[], int count) {
     if (count == 0) {
-        cout << "Warning: Roster is currently empty.\n";
+        cout << "\nWarning: Roster is currently empty.\n";
         return;
     }
     cout << "\n-----------------------------------------\n";
