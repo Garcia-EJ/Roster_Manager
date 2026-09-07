@@ -175,3 +175,24 @@ void printRoster(const Student roster[], int count) {
     cout << "-----------------------------------------\n";
     cout << "Total Active Records: " << count << "\n";
 }
+
+/*
+================================================================================
+5. Performance Reflection (Written Task)
+================================================================================
+11. Random Access vs. Linear Search:
+    - safeGetRecord executes in O(1) time complexity because array elements reside
+      in contiguous memory locations. The exact memory address is computed instantly
+      using constant arithmetic: Base Address + (Index * Element Size).
+    - findStudentById requires O(n) worst-case time complexity because the array is
+      unsorted. To locate an ID (or confirm it doesn't exist), the system must sequentially
+      compare the target ID against each element up to all 'n' active records in the array.
+
+12. Deletion Cost:
+    - Deleting an element at index 0 requires left-shifting all remaining (n - 1)
+      elements to close the gap and keep storage contiguous, leading to an O(n) operation.
+    - Deleting an element at index currentCount - 1 (the last element) requires 0 shifts;
+      only the active record count needs to be decremented (currentCount--), resulting in
+      an O(1) constant-time operation.
+================================================================================
+*/
